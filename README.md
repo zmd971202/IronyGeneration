@@ -17,3 +17,5 @@
     attr1: attr of non-irony (will not be used)  
     attr2: attr of irony  
 
+## pipline:
+constraint beamsearch https://github.com/awslabs/sockeye
