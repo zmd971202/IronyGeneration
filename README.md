@@ -1,7 +1,7 @@
 # IronyGeneration
 ## irony_word_extraction
   1. make_vocab.py  
-    python make_vocab.py courpus K > vocab  
+    python3 make_vocab.py courpus K > vocab  
     k: prints K most frequent vocab items
     
   2. make_attribute_vocab.py  
