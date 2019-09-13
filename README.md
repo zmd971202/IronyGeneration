@@ -12,14 +12,14 @@
 mkdir download
 nohup python download.py data/train_ironys_id.txt > download/train_ironys.txt
 ```
-Replace train_ironys_id.txt with train_non_ironys_id.txt/test_ironys_id.txt/test_non_ironys_id.txt to download train_non_ironys/test_ironys/test_non_ironys
+Replace train_ironys_id.txt with train_non_ironys_id.txt/test_ironys_id.txt/test_non_ironys_id.txt in the command to download train_non_ironys/test_ironys/test_non_ironys
 
 As some tweets are protected, the amount of obtained tweets may be less than that mentioned in paper.
 ### 2. Preprocess
 ```python
 python prepare_data.py download/train_ironys.txt data/train_ironys.txt
 ```
-Run similar commands to preprocess train_non_ironys, test_ironys, and test_non_ironys
+Change the file name in the command and run similar commands to preprocess train_non_ironys, test_ironys, and test_non_ironys
 
 ## Train 
 ### 1. Build up directories
