@@ -136,6 +136,7 @@ def train_non_senti_discriminator(model, opt, epochs, hps):
 
             input, label = data
             input, label = input.cuda(), label.cuda()
+            batch_size = input.size(0)
             
             
             opt.zero_grad()
@@ -165,6 +166,7 @@ def train_non_senti_discriminator(model, opt, epochs, hps):
         batch_num += 1
         input, label = data
         input, label = input.cuda(), label.cuda()
+        batch_size = input.size(0)
         pred = model(input)
         
         pred = torch.argmax(pred, 1)
@@ -188,6 +190,7 @@ def train_senti_discriminator(model, opt, epochs, hps):
 
             input,  label = data
             input,  label = input.cuda(), label.cuda()
+            batch_size = input.size(0)
             
             
             opt.zero_grad()
@@ -217,6 +220,7 @@ def train_senti_discriminator(model, opt, epochs, hps):
         batch_num += 1
         input, label = data
         input,  label = input.cuda(), label.cuda()
+        batch_size = input.size(0)
 
         pred = model(input)
 
@@ -243,6 +247,7 @@ def train_irony_discriminator(model, opt, epochs, hps):
             
             input, label = data
             input, label = input.cuda(), label.cuda()
+            batch_size = input.size(0)
             
             opt.zero_grad()
             out = model(input)
@@ -271,6 +276,7 @@ def train_irony_discriminator(model, opt, epochs, hps):
         batch_num += 1
         input,  label = data
         input,  label = input.cuda(),  label.cuda()
+        batch_size = input.size(0)
 
         pred = model(input)
 

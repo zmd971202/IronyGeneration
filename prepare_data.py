@@ -136,17 +136,17 @@ def f(x):
         words = text_processor.pre_process_doc(l)
         words = [w for w in words if w not in remove_words]
 
-        # jumo hashtag
+        # hashtag at the end
         while len(words) > 0 and '#' in words[-1]:
             words = words[:-1]
         if len(words) == 0:
             continue
 
-        # juzhong hashtag
+        # hashtag in the middle
         words = text_processor1.pre_process_doc(' '.join(words))
         words = [w for w in words if w not in remove_words]
 
-        #
+        # punctuation
         new_words = []
         if words[0] in p3 or words[0] not in string.punctuation:
             new_words.append(words[0])

@@ -80,7 +80,6 @@ class MyDataset(Dataset):
 class DisDataset(Dataset):
     def __init__(self, data_path, label_path, word2idx, debug=False):
         seqs = open(data_path, "r", encoding="utf-8").readlines()
-#         labels = [[1, 0] if int(l) == 0 else [0, 1] for l in open(label_path, "r", encoding="utf-8").read().split('\n')]
         labels = [int(l) for l in open(label_path, "r", encoding="utf-8").read().split('\n')]
         self.ls = [int(l) for l in open(label_path, "r", encoding="utf-8").read().split('\n')]
         seqs = list(map(lambda line: line.strip(), seqs))
@@ -120,8 +119,6 @@ def make_vocab(hps):
     words = []
     lines = open(hps.dis_train_data_path, 'r').read().split('\n')
     lines += open(hps.dis_dev_data_path, 'r').read().split('\n')
-    #lines = open(hps.whole_senti_train_data_path, 'r').read().split('\n')
-    #lines += open(hps.whole_senti_dev_data_path, 'r').read().split('\n')
     lines += open(hps.irony_path, 'r').read().split('\n')
     lines += open(hps.non_path, 'r').read().split('\n')
     lines += open(hps.senti_train_data_path, 'r').read().split('\n')
@@ -167,7 +164,6 @@ def collate_fn(data):
 
         return padded_seq
     
-#     data.sort(key=lambda x: len(x[0]), reverse=True)
 
     seqs, labels = zip(*data)  # tuples
     seqs = merge(seqs)
