@@ -1,5 +1,7 @@
 # IronyGeneration
 
+The code and data of [A Neural Approach to Irony Generation](https://arxiv.org/abs/1909.06200)
+
 ## Requirements
 - python==3
 - pytorch==0.4
