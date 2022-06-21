@@ -1,4 +1,4 @@
 bs4
-numpy==1.15.0
+numpy==1.22.0
 langdetect==1.0.7
 ekphrasis==0.5.1
